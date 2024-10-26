@@ -1,13 +1,12 @@
-Unset
-cloudbuild.yaml
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-args: ['build', '-t',
-'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistery/gcp-demo-app', '.']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistery/gcp-demo-app', '.']
+
 - name: 'gcr.io/cloud-builders/docker'
-args: ['push',
-'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistery/gcp-demo-app']
+  args: ['push', 'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistry/gcp-demo-app']
+
 images:
-- 'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistery/gcp-demo-app'
+- 'us-central1-docker.pkg.dev/upbeat-stratum-437711-d0/sample-artifactregistry/gcp-demo-app'
+
 options:
-logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
